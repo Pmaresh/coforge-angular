@@ -1,0 +1,16 @@
+ <!--Parent Component: Displays a list of user names.-->
+
+ <div class="parent-container">
+    <h1>User List</h1>
+    <ul>
+      <li *ngFor="let user of users" (click)="selectUser(user)">
+        {{ user.name }}
+      </li>
+    </ul>
+        <!-- Parent-Child relationship to work in Angular, 
+ the Child Component must be used (embedded) within the 
+ Parent Component's template. 
+ This means that within the parent.component.html, 
+ you must reference the child component using its selector.-->
+ 
+      <app-child [user]="selectedUser"></app-child>
